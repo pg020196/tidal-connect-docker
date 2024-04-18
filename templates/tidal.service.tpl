@@ -8,13 +8,11 @@ WorkingDirectory=${PWD}/Docker/
 Type=oneshot
 RemainAfterExit=yes
 
-#ExecStartPre=/bin/docker-compose pull --quiet
-ExecStart=/bin/docker-compose up -d
+ExecStart=/bin/docker compose up -d
 
-ExecStop=/bin/docker-compose down
+ExecStop=/bin/docker compose down
 
-#ExecReload=/bin/docker-compose pull --quiet
-ExecReload=/bin/docker-compose up -d
+ExecReload=/bin/docker compose up -d
 
 [Install]
 WantedBy=multi-user.target
